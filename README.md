@@ -28,6 +28,8 @@ The following **required** functionality is completed:
   - Comprehensive checking across all artwork attributes
   - Up to 10 attempts to find non-banned artwork
   - Clear visual indication of banned status
+  - Note: More attribute values on the ban list may result in a higher frequency of repeat results
+  -  [x] _To ensure an accurate grade, your recording **must** show that when clicked, an attribute in the ban list is immediately removed from the list of banned attributes_
 
 The following **optional** features are implemented:
 
