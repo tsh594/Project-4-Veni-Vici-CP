@@ -37,7 +37,8 @@ The following **optional** features are implemented:
   - 6 different attribute types can be banned
 - [x] Users can see a stored history of their previously displayed results from this session
   - Dual history system (recent + full history)
-  - Preserves all viewed artworks
+  - **Each API call automatically updates both recent and full history sections**
+  - History preserves all viewed artworks (not just the last few)
   - Clear visual indication of banned items in history
 
 The following **additional** features are implemented:
@@ -49,6 +50,8 @@ The following **additional** features are implemented:
 * Visual distinction between recent and full history
 * Artwork count in history header
 * "BANNED" overlay for filtered items in history
+* Automatic history updates on every new artwork discovery
+* Dual history panels (recent + complete) that stay synchronized
 
 ## Video Walkthrough
 
