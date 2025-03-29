@@ -2,47 +2,51 @@
 
 Submitted by: **Tasneem Shabana**
 
-This web app allows users to discover random artworks from the Harvard Art Museums collection, with the ability to filter out unwanted artworks by banning specific attributes like artist, culture, or medium.
+This web app allows users to discover random artworks from the Harvard Art Museums collection, with the ability to filter out unwanted artworks by banning specific attributes like artist, culture, or medium. It features a comprehensive history system showing both recent and all viewed artworks.
 
-Time spent: **8** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed: 
 
 - [x] **Application features a button that creates a new API fetch request on click and displays at least three attributes and an image obtained from the returned JSON data**
-  - The type of attribute displayed for each image is consistent across API calls (artist, culture, period, medium, etc.)
+  - Displays consistent attributes (title, artist, culture, period, medium, etc.) for each artwork
+  - Shows artwork image along with detailed information
 - [x] **Only one item/data from API call response is viewable at a time and at least one image is displayed per API call**
-  - A single artwork is displayed at a time 
-  - Displayed attributes match the displayed image
-  - There is at least one image per API call
+  - Single artwork displayed at a time
+  - All attributes match the displayed image
+  - Fallback display for missing images
 - [x] **API call response results should appear random to the user**
-  - Clicking the button generates random new artworks each time
-  - The Harvard Art Museums API has a large collection making repeats unlikely
+  - Uses random sorting from Harvard Art Museums API
+  - Large collection makes repeats unlikely
 - [x] **Clicking on a displayed value for one attribute adds it to a displayed ban list**
   - Multiple attributes are clickable (artist, culture, period, etc.)
-  - Clicking an attribute adds it to the ban list immediately
-  - Clicking a banned attribute removes it immediately
+  - Immediate addition/removal from ban list
+  - Visual feedback for banned attributes
 - [x] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
-  - Artworks containing banned attributes won't appear in new searches
-  - The app clearly shows when attributes are banned
-  - Ban list items can be clicked to remove them
+  - Comprehensive checking across all artwork attributes
+  - Up to 10 attempts to find non-banned artwork
+  - Clear visual indication of banned status
 
 The following **optional** features are implemented:
 
 - [x] Multiple types of attributes are clickable and can be added to the ban list
+  - 6 different attribute types can be banned
 - [x] Users can see a stored history of their previously displayed results from this session
-  - A history panel shows the last 4 viewed artworks
-  - History updates automatically with new discoveries
-  - Banned items in history are visually marked
+  - Dual history system (recent + full history)
+  - Preserves all viewed artworks
+  - Clear visual indication of banned items in history
 
 The following **additional** features are implemented:
 
-* Visual indication of banned attributes with strikethrough and "BANNED" badge
-* Loading animations during API requests
-* Responsive design that works on mobile and desktop
 * Glassmorphism UI design with modern aesthetics
-* Error handling for missing images or data
+* Loading animations during API requests
+* Responsive design that works on all device sizes
+* Comprehensive error handling for missing data
+* Visual distinction between recent and full history
+* Artwork count in history header
+* "BANNED" overlay for filtered items in history
 
 ## Video Walkthrough
 
@@ -64,13 +68,15 @@ GIF created with:
 
 Challenges encountered while building the app:
 
-1. **API Limitations**: The Harvard Art Museums API sometimes returns incomplete records or missing images, requiring robust error handling.
+1. **API Data Consistency**: The Harvard Art Museums API sometimes returns incomplete records or missing images, requiring robust null checks and fallback displays (robust error handling).
 
-2. **Banned Items Logic**: Implementing comprehensive filtering across multiple attributes while maintaining performance required careful optimization.
+2. **Banned Items Logic**: Implementing comprehensive filtering across multiple attributes while maintaining performance required careful optimization of the checking algorithm.
 
-3. **History Management**: Ensuring banned items were properly indicated in history without being filtered out was tricky but resulted in a better user experience.
+3. **History Management**: Creating the dual history system (recent + full) while maintaining banned item visibility and proper scrolling behavior was complex but rewarding.
 
-4. **Responsive Design**: Creating a layout that worked well on both mobile and desktop while maintaining the aesthetic design required multiple iterations.
+4. **Responsive Design**: Adapting the glassmorphism design to work well on mobile devices while maintaining the aesthetic required multiple iterations.
+
+5. **State Management**: Keeping the history, banned terms, and current artwork in sync while ensuring smooth UI updates required careful state management.
 
 ## License
 

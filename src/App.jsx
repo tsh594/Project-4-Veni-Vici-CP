@@ -27,7 +27,7 @@ function App() {
 
       if (artwork?.primaryimageurl && !isArtBanned(artwork)) {
         setCurrentArt(artwork);
-        setHistory(prev => [artwork, ...prev.slice(0, 4)]);
+        setHistory(prev => [artwork, ...prev]);
       } else {
         setCurrentArt(null);
       }
@@ -166,30 +166,66 @@ function App() {
             </div>
           )}
 
-          {viewHistory && history.length > 0 && (
-            <div className="history-panel">
-              <h3>Recently Viewed</h3>
-              <div className="history-items">
-                {history.map((art, index) => (
-                  <div 
-                    key={index} 
-                    className={`history-item ${isArtBanned(art) ? 'banned-history' : ''}`}
-                    onClick={() => handleHistoryClick(art)}
-                  >
-                    {art.primaryimageurl ? (
-                      <img 
-                        src={art.primaryimageurl} 
-                        alt={art.title} 
-                        className="history-image"
-                      />
-                    ) : (
-                      <div className="history-placeholder">🎨</div>
-                    )}
-                    {isArtBanned(art) && (
-                      <div className="history-banned-overlay">BANNED</div>
-                    )}
+          {viewHistory && (
+            <div className="history-panels">
+              <div className="recent-history">
+                <h3>Recently Viewed (Last 4)</h3>
+                {history.length > 0 ? (
+                  <div className="history-items">
+                    {history.slice(0, 4).map((art, index) => (
+                      <div 
+                        key={`recent-${index}`} 
+                        className={`history-item ${isArtBanned(art) ? 'banned-history' : ''}`}
+                        onClick={() => handleHistoryClick(art)}
+                      >
+                        {art.primaryimageurl ? (
+                          <img 
+                            src={art.primaryimageurl} 
+                            alt={art.title} 
+                            className="history-image"
+                          />
+                        ) : (
+                          <div className="history-placeholder">🎨</div>
+                        )}
+                        {isArtBanned(art) && (
+                          <div className="history-banned-overlay">BANNED</div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <p className="empty-history">No artworks viewed yet</p>
+                )}
+              </div>
+
+              <div className="full-history">
+                <h3>All Viewed Artworks ({history.length})</h3>
+                {history.length > 0 ? (
+                  <div className="history-items scrollable">
+                    {history.map((art, index) => (
+                      <div 
+                        key={`full-${index}`} 
+                        className={`history-item ${isArtBanned(art) ? 'banned-history' : ''}`}
+                        onClick={() => handleHistoryClick(art)}
+                      >
+                        {art.primaryimageurl ? (
+                          <img 
+                            src={art.primaryimageurl} 
+                            alt={art.title} 
+                            className="history-image"
+                          />
+                        ) : (
+                          <div className="history-placeholder">🎨</div>
+                        )}
+                        {isArtBanned(art) && (
+                          <div className="history-banned-overlay">BANNED</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="empty-history">No artworks viewed yet</p>
+                )}
               </div>
             </div>
           )}
