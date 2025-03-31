@@ -2,7 +2,7 @@
 
 Submitted by: **Tasneem Shabana**
 
-This web app allows users to discover random artworks from the Harvard Art Museums collection, with the ability to filter out unwanted artworks by banning specific attributes like artist, culture, or medium. It features a comprehensive history system showing both recent and all viewed artworks.
+This web app allows users to discover random artworks from the Harvard Art Museums collection, with the ability to filter out unwanted artworks by banning specific attributes like artist, culture, or medium. It features a comprehensive history system showing both recent and all viewed artworks, plus a clear filter button to reset all banned attributes.
 
 Time spent: **10** hours spent in total
 
@@ -24,12 +24,13 @@ The following **required** functionality is completed:
   - Multiple attributes are clickable (artist, culture, period, etc.)
   - Immediate addition/removal from ban list
   - Visual feedback for banned attributes
+  - **Clear filter button to remove all banned attributes at once**
 - [x] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
   - Comprehensive checking across all artwork attributes
   - Up to 10 attempts to find non-banned artwork
   - Clear visual indication of banned status
   - Note: More attribute values on the ban list may result in a higher frequency of repeat results
-  -  [x] _To ensure an accurate grade, your recording **must** show that when clicked, an attribute in the ban list is immediately removed from the list of banned attributes_
+  - [x] _To ensure an accurate grade, your recording **must** show that when clicked, an attribute in the ban list is immediately removed from the list of banned attributes_
 
 The following **optional** features are implemented:
 
@@ -52,6 +53,7 @@ The following **additional** features are implemented:
 * "BANNED" overlay for filtered items in history
 * Automatic history updates on every new artwork discovery
 * Dual history panels (recent + complete) that stay synchronized
+* **Clear filter button to reset all banned attributes**
 
 ## Video Walkthrough
 
@@ -60,7 +62,6 @@ Here's a walkthrough of implemented user stories:
 <img src='./videos/Vite+React--Mobile.gif' title='Mobile Video app Walkthrough' width='400' alt='Video Walkthrough' />
 
 <img src='./videos/Vite+React--Desktop.gif' title='Desktop Video app Walkthrough' width='400' alt='Video Walkthrough' />
-
 
 GIF created with:
 (1). Xbox Game Bar
